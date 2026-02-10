@@ -102,16 +102,19 @@
 
 <body>
 
+  <!-- Romantic background music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
   <section class="hero">
-    <h1>Happy Valentine’s Day My Love❤️</h1>
+    <h1>Happy Valentine’s Day ❤️</h1>
     <p>
       From the moment you walked into my life, everything felt warmer,
       calmer, and more meaningful. This little page is just for you.
     </p>
 
-    <button class="btn"
-      onclick="document.getElementById('memories').style.display='block';
-               document.getElementById('memories').scrollIntoView({behavior:'smooth'});">
+    <button class="btn" onclick="showMemories()">
       See Our Memories
     </button>
   </section>
@@ -149,6 +152,17 @@
   <footer>
     Made with love ❤️
   </footer>
+
+  <script>
+    function showMemories() {
+      document.getElementById('memories').style.display = 'block';
+      document.getElementById('memories').scrollIntoView({ behavior: 'smooth' });
+
+      const music = document.getElementById('bgMusic');
+      music.volume = 0.6;
+      music.play();
+    }
+  </script>
 
 </body>
 </html>
